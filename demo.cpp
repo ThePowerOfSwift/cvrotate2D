@@ -1,4 +1,4 @@
-// Compile with: g++ test.cpp cvrotate2D.cpp -lopencv_core -lopencv_highgui -lopencv_imgproc
+// Compile with: g++ demo.cpp cvrotate2D.cpp -lopencv_core -lopencv_highgui -lopencv_imgproc
 
 #include "cvrotate2D.hpp"
 
