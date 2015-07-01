@@ -41,7 +41,7 @@ Finally, execute ```./a.out``` to obtain the file *rotated.png* with the image r
 
 ### Optional: C++ code to calculate the angle between two vectors
 
-```csharp
+```cpp
 #include <opencv2/core/core.hpp>
 
 int main()
