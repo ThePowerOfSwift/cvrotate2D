@@ -39,7 +39,7 @@ g++ test.cpp -lopencv_core -lopencv_highgui -lopencv_imgproc -lcvrotate2D -I./ -
 Finally, execute ```./a.out``` to obtain the file *rotated.png* with the image rotated.
 
 
-### Angle between two vectors
+### Optional: C++ code to calculate the angle between two vectors
 
 ```
 #include <opencv2/core/core.hpp>
