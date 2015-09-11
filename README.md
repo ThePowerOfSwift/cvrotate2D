@@ -16,10 +16,10 @@ Example
 Compile the demonstration with the following command:
 
 ```
-g++ demo.cpp cvrotate2D.cpp -lopencv_core -lopencv_highgui -lopencv_imgproc
+g++ demo.cpp -o demo cvrotate2D.cpp -lopencv_core -lopencv_imgcodecs -lopencv_imgproc
 ```
 
-And then execute ```./a.out``` to obtain the file *rotated.png* with the image rotated.
+And then execute ```./demo``` to obtain the file *rotated.png* with the image rotated.
 
 Example 2 (compiling the library)
 ---------------------------------
@@ -33,10 +33,10 @@ g++ -O3 -Wall -shared -fpic -o libcvrotate2D.so cvrotate2D.cpp
 Compile the demonstration using the compiled library *cvrotate2D*:
 
 ```
-g++ demo.cpp -lopencv_core -lopencv_highgui -lopencv_imgproc -lcvrotate2D -I./ -L./
+g++ demo.cpp -o demo -lopencv_core -lopencv_highgui -lopencv_imgcodecs -lcvrotate2D -I./ -L./
 ```
 
-Finally, execute ```./a.out``` to obtain the file *rotated.png* with the image rotated.
+Finally, execute ```./demo``` to obtain the file *rotated.png* with the image rotated.
 
 
 ### Optional: C++ code to calculate the angle between two vectors
