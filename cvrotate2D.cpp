@@ -4,7 +4,7 @@ namespace cv {
 
 void rotate2D(const cv::Mat & src, cv::Mat & dst, const double degrees)
 {
-	double offsetX, offsetY;
+    double offsetX, offsetY;
     double width = src.size().width;
     double height = src.size().height;
 
