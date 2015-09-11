@@ -6,7 +6,7 @@ int main()
 {
     const double degrees = 45;
 
-    cv::Mat src = cv::imread("image.png", CV_LOAD_IMAGE_UNCHANGED);
+    cv::Mat src = cv::imread("image.png", cv::IMREAD_UNCHANGED);
     cv::Mat dst;
 
     cv::rotate2D(src, dst, degrees);
