@@ -4,24 +4,14 @@ namespace cv {
 
 void rotate2D(const cv::Mat & src, cv::Mat & dst, const double degrees)
 {
-    double offsetX, offsetY;
-    double width = src.size().width;
-    double height = src.size().height;
+    cv::Point2f center(src.cols/2.0, src.rows/2.0);
+    cv::Mat rot = cv::getRotationMatrix2D(center, degrees, 1.0);
+    cv::Rect bbox = cv::RotatedRect(center,src.size(), degrees).boundingRect();
 
-    cv::Point2d center = cv::Point2d(width/2.0, height/2.0);
-    cv::Rect bounds = cv::RotatedRect(center, src.size(), degrees).boundingRect();
-    cv::Mat resized = cv::Mat::zeros(bounds.size(), src.type());
+    rot.at<double>(0,2) += bbox.width/2.0 - center.x;
+    rot.at<double>(1,2) += bbox.height/2.0 - center.y;
 
-    offsetX = (bounds.width - width) / 2.0;
-    offsetY = (bounds.height - height) / 2.0;
-
-    cv::Rect ROI = cv::Rect(offsetX, offsetY, width, height);
-    src.copyTo(resized(ROI));
-    center += cv::Point2d(offsetX, offsetY);
-
-    cv::Mat M = cv::getRotationMatrix2D(center, degrees, 1.0);
-
-    cv::warpAffine(resized, dst, M, resized.size());
+    cv::warpAffine(src, dst, rot, bbox.size());
 }
 
 }
